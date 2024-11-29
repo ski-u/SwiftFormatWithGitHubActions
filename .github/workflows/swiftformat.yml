@@ -1,0 +1,16 @@
+name: swiftformat
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/swiftformat.yml'
+      - '**/*.swift'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  swiftformat:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: swiftformat
+      run: docker run --rm --volume=.:/workspace --env GITHUB_WORKSPACE=/workspace ghcr.io/nicklockwood/swiftformat:0.55.3 /workspace --lint --lenient --reporter github-actions-log
