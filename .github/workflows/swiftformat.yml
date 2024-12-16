@@ -1,0 +1,20 @@
+name: swiftformat
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/swiftformat.yml'
+      - '**/*.swift'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  swiftformat:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    - name: Pull formatting docker image
+      run: docker pull ghcr.io/nicklockwood/swiftformat:0.55.3
+    - name: Run format linting
+      run: docker run --rm -v ${{ github.workspace }}:/repo ghcr.io/nicklockwood/swiftformat:0.55.3 /repo --lint
