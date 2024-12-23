@@ -6,7 +6,7 @@
       "fileMatch": [".github/workflows/swiftformat.yml"],
       "matchStrings": ["SWIFTFORMAT_VERSION: (?<currentValue>.*?)\\n"],
       "datasourceTemplate": "docker",
-      "packageName": "ghcr.io/nicklockwood/swiftformat"
+      "packageNames": ["ghcr.io/nicklockwood/swiftformat"]
     }
   ]
 }
