@@ -14,5 +14,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: swiftformat
         env:
-          SWIFTFORMAT_VERSION: 0.55.4
-        run: docker run --rm --volume=.:/workspace --env GITHUB_WORKSPACE=/workspace ghcr.io/nicklockwood/swiftformat:${SWIFTFORMAT_VERSION} /workspace --lint --lenient --reporter github-actions-log
+          _VERSION: 0.55.4
+        run: docker run --rm --volume=.:/workspace --env GITHUB_WORKSPACE=/workspace ghcr.io/nicklockwood/swiftformat:${_VERSION} /workspace --lint --lenient --reporter github-actions-log
