@@ -13,7 +13,7 @@
         "SWIFTFORMAT_VERSION: (?<currentValue>.*?)\\n"
       ],
       "depNameTemplate": "ghcr.io/nicklockwood/swiftformat",
-      "datasourceTemplate": "github-tags"
+      "datasourceTemplate": "docker"
     }
   ]
 }
