@@ -5,8 +5,7 @@
     {
       "fileMatch": [".github/workflows/swiftformat.yml"],
       "matchStrings": ["SWIFTFORMAT_VERSION: (?<currentValue>.*?)\\n"],
-      "depNameTemplate": "ghcr.io/nicklockwood/swiftformat",
-      "datasourceTemplate": "github-tags"
+      "depNameTemplate": "ghcr.io/nicklockwood/swiftformat"
     }
   ]
 }
