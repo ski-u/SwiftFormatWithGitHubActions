@@ -15,5 +15,10 @@ jobs:
       - name: swiftformat
         env:
           # renovate: datasource=docker depName=ghcr.io/nicklockwood/swiftformat
-          SWIFTFORMAT_VERSION: 0.55.0
-        run: docker run --rm --volume=.:/workspace --env GITHUB_WORKSPACE=/workspace ghcr.io/nicklockwood/swiftformat:${SWIFTFORMAT_VERSION} /workspace --lint --lenient --reporter github-actions-log
+          SWIFTFORMAT_VERSION: 0.54.5
+        run: >
+          docker run \
+            --rm \
+            --volume=.:/workspace \
+            --env GITHUB_WORKSPACE=/workspace \
+            ghcr.io/nicklockwood/swiftformat:${SWIFTFORMAT_VERSION} /workspace --reporter github-actions-log --lint --lenient
